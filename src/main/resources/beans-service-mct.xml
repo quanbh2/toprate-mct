@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://cxf.apache.org/jaxrs
+http://cxf.apache.org/schemas/jaxrs.xsd
+http://cxf.apache.org/jaxws 
+http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- Beans definition for module EST -->
+
+
+
+
+	<jaxrs:server id="usersService"
+		address="/admin/usersService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="usersClass"
+				class="com.toprate.mct.rest.UsersServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+
+
+	<jaxrs:server id="objectsServiceRest"
+		address="/admin/objectsServiceRest">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="objectsClass"
+				class="com.toprate.mct.rest.ObjectsRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+	<jaxrs:server id="commonServiceRest"
+		address="/admin/commonServiceRest">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="commonClass"
+				class="com.toprate.mct.rest.CommonRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+	<jaxrs:server id="rolesServiceRest"
+		address="/admin/rolesServiceRest">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="rolesClass"
+				class="com.toprate.mct.rest.RolesRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+	<jaxrs:server id="provinceService"
+		address="/admin/provinceService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="provinceClass"
+				class="com.toprate.mct.rest.ProvinceRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+	<jaxrs:server id="manufacturerService"
+		address="/admin/manufacturerService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="manufacturerClass"
+				class="com.toprate.mct.rest.ManufacturerRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+	<jaxrs:server id="typeMachineService"
+		address="/admin/typeMachineService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="typeMachineClass"
+				class="com.toprate.mct.rest.TypeMachineRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+	<jaxrs:server id="modelService"
+		address="/admin/modelService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="modelClass"
+				class="com.toprate.mct.rest.ModelRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+	<jaxrs:server id="FileServer" address="/admin/FileServer">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="FileServerClass"
+				class="com.toprate.mct.rest.FileServerImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+	<jaxrs:server id="appParamService"
+		address="/admin/appParamService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="appParamServiceClass"
+				class="com.toprate.mct.rest.AppParamRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+
+	<!-- Quản lý tin bán,cho thuê máy -->
+	<jaxrs:server id="adminSell4RentService"
+		address="/admin/sell4RentService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="adminSell4RentClass"
+				class="com.toprate.mct.rest.AdminSell4RentRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+	<!-- Quản lý tin mua,thuê máy -->
+	<jaxrs:server id="adminBuyRentService"
+		address="/admin/buyRentService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="adminBuyRentClass"
+				class="com.toprate.mct.rest.AdminBuyRentRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+	<!-- Quản lý tin tuyển lái -->
+	<jaxrs:server id="adminJobService"
+		address="/admin/jobService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="adminJobClass"
+				class="com.toprate.mct.rest.AdminJobRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+	<!-- Quản lý tin tìm việc -->
+	<jaxrs:server id="adminJobApplicationService"
+		address="/admin/jobApplicationService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="adminJobApplicationClass"
+				class="com.toprate.mct.rest.AdminJobApplicationRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+
+</beans>

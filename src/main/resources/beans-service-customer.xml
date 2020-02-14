@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://cxf.apache.org/jaxrs
+http://cxf.apache.org/schemas/jaxrs.xsd
+http://cxf.apache.org/jaxws 
+http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- Beans definition for module EST -->
+	<jaxrs:server id="customerFileServer"
+		address="/customer/FileServer">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="customerFileServerClass"
+				class="com.toprate.mct.rest.FileCustomerServerImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+
+
+	<jaxrs:server id="usersCustomerService"
+		address="/customer/usersService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="usersCustomerClass"
+				class="com.toprate.mct.rest.UsersCustomerServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+
+	<jaxrs:server id="commonCustomerService"
+		address="/customer/commonRsService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="commonCustomerClass"
+				class="com.toprate.mct.rest.CustomerCommonRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+	<jaxrs:server id="jobCustomerService"
+		address="/customer/jobRsService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="jobCustomerClass"
+				class="com.toprate.mct.rest.JobRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+	<!-- Bán, cho thuê xe -->
+	<jaxrs:server id="sell4RentService"
+		address="/customer/sell4rentRsService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="sell4RentClass"
+				class="com.toprate.mct.rest.Sell4RentRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+	<!-- Mua , thuê xe -->
+	<jaxrs:server id="buyRentService"
+		address="/customer/buyRentRsService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="buyRentClass"
+				class="com.toprate.mct.rest.BuyRentRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+	<!-- Sms box -->
+	<jaxrs:server id="smsBoxService"
+		address="/customer/smsBoxRsService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="smsBoxClass"
+				class="com.toprate.mct.rest.SmsBoxRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+
+	<!--Salon -->
+	<!-- <jaxrs:server id="salonService" address="/customer/salonRsService"> 
+		<jaxrs:providers> <ref bean="jsonProvider" /> </jaxrs:providers> <jaxrs:serviceBeans> 
+		<bean id="salonClass" class="com.toprate.mct.rest.SalonRsServiceImpl" /> 
+		</jaxrs:serviceBeans> </jaxrs:server> Salon product <jaxrs:server id="salonProductService" 
+		address="/customer/salonProductRsService"> <jaxrs:providers> <ref bean="jsonProvider" 
+		/> </jaxrs:providers> <jaxrs:serviceBeans> <bean id="salonProductClass" class="com.toprate.mct.rest.SalonProductsServiceImpl" 
+		/> </jaxrs:serviceBeans> </jaxrs:server> -->
+
+	<!--save mct -->
+	<jaxrs:server id="saveMctService"
+		address="/customer/saveMctRsService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="saveMctClass"
+				class="com.toprate.mct.rest.SaveMctRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+	
+	
+	<!--forget pass-->
+	<jaxrs:server id="forgetPassService"
+	address="/customer/forgetPassRsService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="forgetPassClass"
+				class="com.toprate.mct.rest.ForgetPassRsServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+	<!--crud new -->
+	<jaxrs:server id="saveNewService"
+				  address="/customer/NewService">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<bean id="newServiceClass"
+				  class="com.toprate.mct.rest.NewServiceImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+</beans>
